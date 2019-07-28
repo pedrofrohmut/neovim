@@ -1,0 +1,10 @@
+# EveryThing Ignored
+*
+**.*
+
+# Exceptions
+!init.vim
+!ginit.vim
+!README.md
+!.gitignore
+
