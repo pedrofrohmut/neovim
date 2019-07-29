@@ -87,6 +87,11 @@ inoremap <C-Space> <Space><Esc>i
 nnoremap <S-Enter> O<Esc>j
 nnoremap <C-Enter> o<Esc>k
 
+" Utils
+map <F8> :ALEFix<CR>
+map <F7> :set fileformat=unix<CR>
+map <F6> :w<CR>
+
 
 
 " NETRW
