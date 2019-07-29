@@ -1,17 +1,40 @@
 call plug#begin('~\AppData\Local\nvim\plugged')
 
+" JavaScript Support
 Plug 'pangloss/vim-javascript'
+
+" JSX Support
 Plug 'mxw/vim-jsx', { 'for': ['jsx', 'javascript.jsx'] }
-Plug 'justinj/vim-react-snippets'
+
+" React code snippets
+Plug 'epilande/vim-react-snippets'
+
+" Ultisnips
 Plug 'SirVer/ultisnips'
+
+" Surronder for character and simple stuff
 Plug 'tpope/vim-surround'
+
+" Commenter
 Plug 'tpope/vim-commentary'
+
+" NERDTree - File Tree Manager and Viewer
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+
+" Linters
 Plug 'w0rp/ale'
+
+" CtrlP for file opening
 Plug 'ctrlpvim/ctrlp.vim'
+
+" Emmet - HTML Snippets
 Plug 'mattn/emmet-vim', { 'for': ['javascript.jsx', 'jsx', 'javascript', 'typescript', 'ts', 'tsx', 'html', 'css'] }
 
+" Color themes
 Plug 'chriskempson/base16-vim'
+
+" Center Text on Screen
+Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
@@ -66,6 +89,33 @@ nnoremap <C-Enter> o<Esc>k
 
 
 
+" NETRW
+
+" MAP <F5> to toggle linenumbers in NormalMode
+"nmap <F5> gh
+
+" Hide dot files on startup
+"let g:regex='\(^\|\s\s)\zs\.\S\+'
+"let g:netrw_list_hide=ghregex
+
+" Toggle Banner
+"nmap <F6> I
+
+" Turn Off banner on startup
+let g:netrw_banner = 0
+
+" Change File List Style
+"let g:netrw_liststyle=0 " Default (DirName/FileName)
+"let g:netrw_liststyle=1 " Show time and size
+"let g:netrw_liststyle=2 " Show listing in 2 columns
+let g:netrw_liststyle = 3 " Show tree listing
+
+" Opening
+let g:netrw_winsize = 0 " Set default win size to be always equal
+let g:netrw_preview = 1 " Open splits to the right
+
+
+
 " Ale 
 " files fixed with prettier and then eslint
 let g:ale_fixers = { 
@@ -93,18 +143,28 @@ let g:jsx_ext_required = 0
 
 
 " NERDTree
-autocmd StdinReadPre * let s:std_in=1 
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+"autocmd StdinReadPre * let s:std_in=1 
+"autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 nnoremap <C-B> :NERDTreeToggle<CR>
 
 
 
 " CtrlP
+let g:ctrlp_map = '<C-P>'
+let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_custom_ignore = 'node_modules\|git\'
 let g:ctrlp_show_hidden = 1
+let g:ctrlp_root_markers = ['pom.xml', 'yarn.lock']
 
 
 
 " React-Snippets
 let g:UltiSnipsExpandTrigger="<C-;>"
+
+
+
+" Goyo
+:map <F11> :Goyo<CR>
+let g:goyo_width = '100'
+let g:goyo_height = '85%'
 
