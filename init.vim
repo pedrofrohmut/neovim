@@ -88,36 +88,19 @@ nnoremap <S-Enter> O<Esc>j
 nnoremap <C-Enter> o<Esc>k
 
 " Utils
-map <F8> :ALEFix<CR>
-map <F7> :set fileformat=unix<CR>
-map <F6> :w<CR>
+map <F8> <Esc>:set fileformat=unix<CR>
+map <F7> <Esc>:ALEFix<CR>
+map <F6> <Esc>:w<CR>
 
+" Closing Characters
+inoremap {<CR> {<CR>}<Esc>ko
+inoremap (<CR> (<CR>)<Esc>ko
+inoremap [<CR> [<CR>]<Esc>ko
+inoremap ({<CR> ({<CR>})<Esc>ko
 
-
-" NETRW
-
-" MAP <F5> to toggle linenumbers in NormalMode
-"nmap <F5> gh
-
-" Hide dot files on startup
-"let g:regex='\(^\|\s\s)\zs\.\S\+'
-"let g:netrw_list_hide=ghregex
-
-" Toggle Banner
-"nmap <F6> I
-
-" Turn Off banner on startup
-let g:netrw_banner = 0
-
-" Change File List Style
-"let g:netrw_liststyle=0 " Default (DirName/FileName)
-"let g:netrw_liststyle=1 " Show time and size
-"let g:netrw_liststyle=2 " Show listing in 2 columns
-let g:netrw_liststyle = 3 " Show tree listing
-
-" Opening
-let g:netrw_winsize = 0 " Set default win size to be always equal
-let g:netrw_preview = 1 " Open splits to the right
+" Add , and ; Normal_Mode
+nnoremap ; a;<Esc>
+nnoremap , a,<Esc>
 
 
 
@@ -148,8 +131,8 @@ let g:jsx_ext_required = 0
 
 
 " NERDTree
-"autocmd StdinReadPre * let s:std_in=1 
-"autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+autocmd StdinReadPre * let s:std_in=1 
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 nnoremap <C-B> :NERDTreeToggle<CR>
 
 
