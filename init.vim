@@ -40,6 +40,10 @@ call plug#end()
 
 
 
+filetype plugin on
+
+
+
 " VIM
 set number
 set relativenumber
@@ -102,6 +106,9 @@ inoremap ({<CR> ({<CR>})<Esc>ko
 nnoremap ; a;<Esc>
 nnoremap , a,<Esc>
 
+" Move e Center
+map gg ggzz
+
 
 
 " Ale 
@@ -127,6 +134,11 @@ let g:user_emmet_settings = {
 \  }
 \}
 let g:jsx_ext_required = 0
+
+
+
+" Commenter
+autocmd FileType javascript.jsx setlocal commentstring={/*\ %s\ */}
 
 
 
