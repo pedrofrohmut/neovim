@@ -115,6 +115,9 @@ map gg ggzz
 " files fixed with prettier and then eslint
 let g:ale_fixers = { 
 \  'javascript': ['prettier', 'eslint'],
+\  'javascript.jsx': ['prettier', 'eslint'],
+\  'jsx': ['prettier', 'eslint'],
+\  'json': ['prettier', 'eslint'],
 \  'typescript': ['prettier', 'eslint'],
 \  'css': ['prettier'],
 \}
@@ -138,7 +141,7 @@ let g:jsx_ext_required = 0
 
 
 " Commenter
-autocmd FileType javascript.jsx setlocal commentstring={/*\ %s\ */}
+"autocmd FileType javascript.jsx setlocal commentstring={/*\ %s\ */}
 
 
 
